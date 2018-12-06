@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../Vue/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+     <lista-all >
+
+     </lista-all>
+     
+    </main>
+
+    <template id="perfiles-template">
+        <div>
+            <section class="cabecera">
+                <slot></slot>
+                <input type="search" placeholder="Filtrar usuarios" v-model="busqueda">
+            </section>
+            <hr>
+            <section class="perfiles">
+                <perfil :datos="perfil" v-for="perfil in filtrado"></perfil>
+            </section>
+        </div>
+     </template>
+
+     <template id="perfil-template">
+         <div class="perfil">
+             <img align="left" :src="datos.foto" :alt="datos.nombre">
+             <section>
+                 <h1>{{ datos.nombre }}</h1>
+                 <small>{{ datos.correoe }}</small>
+             </section>
+         </div>
+     </template>
+    
+    <script src="main.js"></script> 
+</body>
+</html>

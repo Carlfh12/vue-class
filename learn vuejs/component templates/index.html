@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../Vue/vue.js"></script>
+</head>
+
+<body>
+    <main>
+        <sorteo :listado="personas"></sorteo>
+        <pre> {{ $data }} </pre>
+    </main>
+    <template id="template-id">
+        <div>
+            <h1 v-if="ganador">el ganador es: {{ ganador }}</h1>
+            <template v-else>
+                <h1>Participantes</h1>
+                <ul>
+                    <li v-for="persona in listado"> {{ persona }} </li>
+                </ul>
+            </template>
+            <input type="button" value="Roll" @click="pickwinner">
+        </div>
+    </template>
+    <script src="main.js"></script>
+</body>
+
+</html>

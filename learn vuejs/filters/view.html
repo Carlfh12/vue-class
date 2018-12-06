@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../Vue/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <h3>{{"titulo al revez" | alReves}} </h3>
+       <ul>
+           <li v-for="juego in buscar">{{ juego.titulo }}</li>
+       </ul>
+       <input type="search" placeholder="buscar juego" v-model="busqueda">
+        <div>
+            <p>Puntuacion: {{ minimo }}</p>
+            <input type="range" min="0" max="10" v-model="minimo">
+        </div>
+       <pre>{{ $data }}</pre>
+    </div>
+<script src="index.js"></script>    
+</body>
+</html>

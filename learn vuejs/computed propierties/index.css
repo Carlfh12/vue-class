@@ -1,0 +1,13 @@
+.panel-body form{
+    border: 1px solid black;
+    width: 50%;
+}
+.panel-body input{
+    margin: 5px;
+    padding: 5px;
+}
+.form-group input{
+    margin: 5px;
+    padding: 5px;
+    width: 80%;
+}

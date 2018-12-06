@@ -1,0 +1,37 @@
+.alerta{
+    width: 300px;
+    border-radius: 15px;
+    background-color: lightgray;
+    border: 1px solid white;
+    box-shadow: 1px 1px 2px gray;
+    position: absolute;
+}
+.alerta_header{
+    border-bottom: 1px solid white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+.alerta_contenido{
+    font-size: 14px;
+    padding: 20px;
+}
+.alerta_footer{
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alerta_exito{
+    background-color: lawngreen;
+}
+
+.alerta_error{
+    background-color: red;
+}
+
+.alerta_cambiap{
+    position: absolute;
+    top: 192px;
+}

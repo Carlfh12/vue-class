@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <script src="../../Vue/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="panel" id="main">
+        <div class="panel-body">
+            <form action="" method="POST" v-on:submit.prevent="enviar">
+                <div class="form-group">
+                    <input type="text" v-model="nombre" placeholder="nombre">
+                </div>
+                <div class="form-group">
+                    <input type="number" v-model="edad" placeholder="edad">
+                </div>
+                <div class="form-group">
+                    <input type="text" v-model="sexo" placeholder="sexo">
+                </div>
+                <div class="form-group">
+                    <input type="email" v-model="email" placeholder="E-mail">
+                </div>
+                <input type="submit" v-if="estatodo"  value="Enviar">
+            </form>
+            <button @keyup.left="tecla">pressiona una tecla</button>
+
+            <ul>
+                <li v-for="tarea in antiguedadtarea">{{ tarea.titulo }}</li>
+            </ul>
+            
+        </div>
+        <pre>
+            {{ $data }}
+        </pre>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.nuevaclase{
+    color:red;
+}
+.subrayado{
+text-decoration: underline;
+}
+
+li{
+    cursor: pointer;
+}
+.completad{
+    color: rgb(255, 38, 0);
+}

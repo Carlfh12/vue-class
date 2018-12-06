@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../Vue/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+        <button @click="mostrarExito = true">Exito</button>
+        <button @click="mostrarError = true">Error</button>
+
+
+    <alerta posicion="alerta--abajo-izquierda">
+    </alerta>
+
+    <alerta tipo="alerta--exito" posicion="alerta--arriba-derecha" v-show="mostrarExito" @ocultarw="mostrarExito = false">
+            <template slot="header">todo ok :)</template>
+            <template>Aqui estoy sho, el exito </template>
+            <template slot="footer">allowed to continued</template>
+    </alerta>
+
+    <alerta tipo="alerta--error" posicion="alerta--abajo-derecha" v-show="mostrarError" @ocultarw="mostrarError = false">
+        <template slot="header">todo mal :(</template>
+        <template>Aqui estoy sho, el error </template>
+        <template slot="footer">not allowed to continued</template>
+    </alerta>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>

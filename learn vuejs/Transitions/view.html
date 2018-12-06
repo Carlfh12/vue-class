@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transitions</title>
+    <script src="../../Vue/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <main>
+        <button @click="mostrar = !mostrar">Mostrar/Ocultar</button>
+        <!--Trasition, appear se usa para que la animacion funcione inmediatamente se abra la pagina-->
+
+        <transition name="aparecer" appear>
+            <h1 v-if="mostrar" v-text="mensajes.transicion"></h1>
+        </transition>
+
+        <!--Animation-->
+        <transition name="bounce">
+            <h1 v-if="mostrar" v-text="mensajes.animacion"></h1>
+        </transition>
+
+        <!--Animated.css-->
+        <transition name="animated.css" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+            <h1 v-if="mostrar" v-text="mensajes.animationCustom"></h1>
+        </transition>
+
+        <!--Transicion entre elementos-->
+        <transition name="bounce" mode="out-in">
+            <h1 key="aparecer" v-if="mostrar" v-text="mensajes.entreElementos"></h1>
+            <h1 key="ocultar" v-else>No hay mensajes</h1>
+        </transition>
+
+        <pre>{{ $data }}</pre>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>

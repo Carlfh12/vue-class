@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lista de tareas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../../Vue/vue.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="api">
+        <div>
+            <input type="color" v-model="colortexto">
+            <h2 v-bind:style="{color:colortexto, fontSize:tamañotexto}">bind style</h2>
+            <h1 v-if="mostrartitulo == 1"> lo siguiente va a cambiar:</h1>
+            <h1 v-else>presiona para mostrar el titulo</h1>
+            <input type="submit" value="mostrar titulo" @click="estadotituloUP">
+            <input type="submit" value="ocultar titulo" @click="estadotituloDown">
+        </div>
+        <p v-bind:class="clase">{{ message }}</p>
+        <input type="text" placeholder="escribe algo" v-model="message">
+        <ul v-for="tarea in tareas">
+            <li v-bind:class="{completad: tarea.completado}" @click="completartarea(tarea)"> <a href="#" @click="eliminartarea(tarea)">X</a>{{ tarea.nombre }}</li>
+        </ul>
+        <input type="text" placeholder="escribe algo" v-model="nuevatarea">
+        <input type="submit" value="guardar" v-if="nuevatarea" @click="guardartarea(nuevatarea)">
+        <p>tareas completadas{{ tareascomple.length }}</p>
+        <pre>{{ $data }}</pre>
+    </div>
+
+<script src="index.js"></script>
+</body>
+</html>
